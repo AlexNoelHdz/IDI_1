@@ -29,4 +29,4 @@ print(f'Suma de pares de D: {len(D[np.where(D%2 == 0)])}')
 #===5===#
 F = np.arange(1,101).reshape(10,10, order = 'F')
 #===6===#
-print(f'Valores de F n el intervalo [10,20]: {F[np.logical_and(F>=10, F=<20)]}')
+print(f'Valores de F n el intervalo [10,20]: {F[np.logical_and(F>=10, F<=20)].sum()}')
