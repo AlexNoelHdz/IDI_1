@@ -37,4 +37,4 @@ M = np.random.uniform(3,10,100)
 # Imprima la suma de los elementos de M
 print(sum(M))
 # Genere una lista R con 20 listas de 50 números reales en [0,10)
-R = list(list(np.random.uniform(0, 10, 50)) for i in range(20))
+R = [np.random.uniform(0, 10, 50) for i in range(20)]
