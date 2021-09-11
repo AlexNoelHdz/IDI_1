@@ -29,7 +29,7 @@ print("{}".format(G))
 # Obtenga una lista H con 4 elementos de G seleccionados de forma aleatoria (sin reemplazo).
 H = np.random.choice(G, 4,False)
 # Genere un arreglo L de 100 números aleatorios enteros en [5,100]
-L = np.random.randint(5,100,(100))
+L = np.random.randint(5,101,100)
 # Imprima la cantidad de números pares en L. 
 print(sum(L%2==0))
 # Genere una lista M de 100 números aleatorios reales en [3,10)
