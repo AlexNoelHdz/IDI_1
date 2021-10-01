@@ -4,7 +4,7 @@
 """
 import numpy as np
 # import matplotlib.pyplot as pl
-np.random.seed(666)
+np.random.seed(10)
 
 
 # 1. En el juego Calabozos y dragones se usan dados no cúbicos. 
@@ -18,8 +18,9 @@ print(f"Resultado menos obtenido: {min(set(L), key = L.count)}")
 # (azul, rojo, verde y amarillo), es decir, 40 cartas en total. 
 # Emule el proceso de repartir 5 cartas a un jugador. 
 # Repita el proceso 5000 veces e imprima según este experimento, ¿qué tan probable es obtener un juego que sume más de 30 puntos?
-Cartas = np.array([[1,2,3,4,5,6,7,8,9,10] for i in ["azul", "rojo", "verde","amarillo"]])
+Cartas = np.array([[1,2,3,4,5,6,7,8,9,10] for i in ["azul", "rojo", "verde","amarillo"]]).flatten()
 M = [np.random.choice(Cartas,5) for i in range(5000)]
+M_More_Than_30
 
 # 3. Emule el evento de contestar un examen de 12 preguntas, cada una de 4 opciones (sólo una correcta). 
 # Entregue una lista M con las calificaciones (sobre 100) de 500 exámenes contestados aleatoriamente.

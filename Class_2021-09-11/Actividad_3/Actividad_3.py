@@ -21,7 +21,7 @@ import numpy as np
 # Inicialice la semilla de aleatoriedad con un valor fijo arbitrario
 np.random.seed(666)
 # Genere una lista G con los elementos {3,6,9,...,39}
-G = np.arange(3,41,3)
+G = list(np.arange(3,41,3))
 # Imprima una permutación aleatoria de los elementos de G.
 np.random.shuffle(G)
 print("{}".format(G))
@@ -32,7 +32,7 @@ L = np.random.randint(5,101,100)
 # Imprima la cantidad de números pares en L. 
 print(sum(L%2==0))
 # Genere una lista M de 100 números aleatorios reales en [3,10)
-M = np.random.uniform(3,10,100)
+M = list(np.random.uniform(3,10,100))
 # Imprima la suma de los elementos de M
 print(sum(M))
 # Genere una lista R con 20 listas de 50 números reales en [0,10)
