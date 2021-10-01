@@ -20,11 +20,10 @@ L = [np.random.choice([1,2,3,4,5,6], 2,p=[1/7,1/7,1/7,1/7,2/7,1/7]).sum() for i 
 # ¿Qué porcentaje de los resultados fue 10?
 L_array = np.array(L)
 print(f"Porcentaje de elementos de L igual a 10: { (L_array == 10).sum() * (100 / (L_array == L_array).sum()) }")
-# 2.- Genere una lista M con los resultados de emular las respuestas aleatorias de 1000 exámenes de 8 preguntas verdadero-falso.
-M_array = np.random.binomial(8, 1/2, 1000)
-M = [M_array]
+# 2.- Genere una lista M con los resultados de emular las respuestas aleatorias de 1000 exámenes de 8 preguntas verdadero-falso
+M = list(np.random.binomial(8, 1/2, 1000))
 #¿Cuál fue el promedio de calificación sobre 100?
-promedio_sobre_100 = (M_array * (100/8)).mean()
+promedio_sobre_100 = (np.array(M) * (100/8)).mean()
 print(f"Promedio sobre 100 de 100 examenes de 8 preguntas: {promedio_sobre_100}")
 # 3.- Se sabe que por un crucero pasan en promedio 20 coches por minuto. 
 #Emule aleatoriamente los resultados de tomar mediciones cada minuto durante una hora.
@@ -38,5 +37,4 @@ max_coches_por_hora = max(Coches_por_hora)
 IQ_500_Personas = list(np.random.normal(100, 15,500))
 # Si se considera a una persona superdotada si su IQ es igual o mayor a 130, 
 # ¿cuántos superdotados se obtuvieron en la simulación?
-IQ_500_Personas_Array = np.array(IQ_500_Personas)
-print(f"Personas super dotadas entre 500: {(IQ_500_Personas_Array > 130).sum()}")
+print(f"Personas super dotadas entre 500: {(np.array(IQ_500_Personas) > 130).sum()}")
