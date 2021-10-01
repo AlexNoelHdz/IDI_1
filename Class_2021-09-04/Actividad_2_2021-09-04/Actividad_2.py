@@ -24,7 +24,7 @@ C = np.multiply(3, A) + B - I2
 #===3===#
 D = np.concatenate((A, B), axis=1)
 #===4===#
-print(f'Suma de D: {np.sum(D)}')
+print(f'Suma de Elementos en D: {np.sum(D%2==0)}')
 print(f'Suma de pares de D: {len(D[np.where(D%2 == 0)])}')
 #===5===#
 F = np.arange(1,101).reshape(10,10, order = 'F')
