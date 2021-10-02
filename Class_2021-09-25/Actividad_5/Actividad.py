@@ -6,7 +6,7 @@ Genere código en Python que, usando N=1000 valores aleatorios y mediante el teo
 Ahora genere una lista con 100 aproximaciones (N=1000 en cada una) y calcule la media y la desviación estándar de dicha lista.
 N puntos correr 100 veces
 Imprima el error absoluto entre el resultado correcto de la integral y la media calculada.
-Teorema de valor medio para integraes, consultado en https://prezi.com/p/vahvmm2n1t_4/metodo-de-montecarlo/
+Teorema del valor medio para integrales, consultado en https://prezi.com/p/vahvmm2n1t_4/metodo-de-montecarlo/
 """
 #integral exacta .32
 import numpy as np
