@@ -2,34 +2,13 @@
 """
 @author: Alejandro Hernandez
 
-Método Simulated Annealing
-Link: https://machinelearningmastery.com/simulated-annealing-from-scratch-in-python/
+Realice código en Python para implementar el algoritmo Simulated Annealing  
+para resolver un problema de TSP (https://en.wikipedia.org/wiki/Travelling_salesman_problem). 
+Es decir, dadas N ubicaciones y su matriz de distancias, encontrar una ruta cíclica óptima (de menor distancia) entre ellas.
 
-Simulated Annealing: Intenta resolver problemas que están basados en un espacio de configuración.
+Puede realizar pruebas con las siguientes matrices de distancias (En la ruta del código)
 
-Función de energía: Es una función matemática que puede tomar una configuración y devolver un valor. 
-Este algorítmo surgió de una idea termodinámica.
-El objetivo es encontrar la configuración que tenga más o menos energía.
-Se puede visualizar como un problema de optimización (encontrar el máximo y mínimo de una función)
-Código corto: revisa la energía de cada una de las configuraciones y dame la que tiene más. 
-
-Un espacio de configuraciones es un espacio discreto (Hay n configuraciones y son muy claras), osea que es distinto
-a una función continua en cálculo.
-
-Problema a resolver: Travelling Salesman Problem (Problema del agente de ventas.)
-Este problema es un pretexto para entender el porqué este tipo de problemas llegó a la computación y luego hasta
-la inteligencia artificial. 
-Se visualizan nodos con las conexiones entre ciudades de francia. 
-Supon que un agente de ventas distribuye pedidos y recorrerá todas las ciudades 
-¿Cómo hacer el recorrido de manera que optimice los recursos?
-El cómo depende de la función de energía. 
-Las configuraciones son cada posible manera en la que puedo hacer el recorrido. 
-La función de energía toma cada manera de hacerlo y devuelve un valor numérico para determinar
-cuál es mejor dependiendo las variables. 
-Puedes optimizar tiempo, distancia, gasto de gasolina etc y generar diferentes funciones de energía. 
-
--> De cualquier punto puedes llegar a cualquier punto
- 
+Adjunte sólo el código.
 
 """
 
@@ -66,17 +45,17 @@ def simulated_annealing(current_sheet_name, k, T_i, T_f):
             if np.random.rand() < q:
                 x = x1.copy()
         t += 1
-        T = T / float(t + 1)
+        T = T_i / float(t + 1)
     return x.copy() , energia(x, data), t*k
 
 print("----------------------------------------------------------------------------------")
-current_sheet_name, k, T_i, T_f = '8c_short', 90, 10, 0.1 
+current_sheet_name, k, T_i, T_f = '8c_short', 30, 10, 1 
 solution , distancia, interacciones = simulated_annealing(current_sheet_name, k, T_i, T_f) 
 print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f} -> ")
 print(f"La mejor ruta es {solution} con una distancia de {distancia} y {interacciones} interacciones.")
 
 print("------------------------------------------------------------------------------------")
-current_sheet_name, k, T_i, T_f = '15c_short', 10000, 10, 0.1
+current_sheet_name, k, T_i, T_f = '15c_short', 5000, 10, 1
 solution , distancia, interacciones = simulated_annealing(current_sheet_name, k, T_i, T_f) 
 print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f} -> ")
 print(f"La mejor ruta es {solution} con una distancia de {distancia} y {interacciones} interacciones.")
