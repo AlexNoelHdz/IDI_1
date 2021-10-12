@@ -69,12 +69,14 @@ def simulated_annealing(current_sheet_name, k, T_i, T_f):
         T = T / float(t + 1)
     return x.copy() , energia(x, data), t*k
 
-# current_sheet_name, k, T_i, T_f = '8c_short', 60, 1, 0 
-# solution , distancia, interacciones = simulated_annealing(current_sheet_name, k, T_i, T_f) 
-# print(f"La mejor ruta es {solution} con una distancia de {distancia} y {interacciones} interacciones.")
-# print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f}")
-
-current_sheet_name, k, T_i, T_f = '15c_short', 100, 10, 1
+print("----------------------------------------------------------------------------------")
+current_sheet_name, k, T_i, T_f = '8c_short', 90, 10, 0.1 
 solution , distancia, interacciones = simulated_annealing(current_sheet_name, k, T_i, T_f) 
+print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f} -> ")
 print(f"La mejor ruta es {solution} con una distancia de {distancia} y {interacciones} interacciones.")
-print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f}")
+
+print("------------------------------------------------------------------------------------")
+current_sheet_name, k, T_i, T_f = '15c_short', 10000, 10, 0.1
+solution , distancia, interacciones = simulated_annealing(current_sheet_name, k, T_i, T_f) 
+print(f"sheet: {current_sheet_name}, k: {k}, T_i: {T_i}, T_f: {T_f} -> ")
+print(f"La mejor ruta es {solution} con una distancia de {distancia} y {interacciones} interacciones.")
