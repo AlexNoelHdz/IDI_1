@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Nov  5 16:20:43 2021
-
-@author: anhernan
-"""
-
 # Escriba funciones que reciban el nodo raíz de un árbol binario y, usando búsqueda por profundidad:
 
     # devuelva el valor máximo de los nodos del árbol
@@ -19,7 +12,6 @@ Created on Fri Nov  5 16:20:43 2021
     # N>0 y genere un árbol a partir del nodo que llama la función, 
     # que contenga como datos los primeros N números primos colocados 
     # por amplitud en un árbol binario. Por ejemplo, si N=4 se genera el árbol 
-
 from cola_alex import cola
 def is_prime(num):
         if num > 1:  
@@ -48,8 +40,8 @@ class nodo:
                 
     def valor_max_nodo(self):
         valor_itself = self.dato
-        valor_izq = 0 
-        valor_der = 0
+        valor_izq = self.dato 
+        valor_der = self.dato
             
         if self.izq is not None:
             valor_izq = self.izq.valor_max_nodo()
@@ -94,7 +86,7 @@ class nodo:
             actual = auxiliar.dequeue()
             cost += 1
             if actual.dato == num:
-                break;
+                break
                 
             if actual.izq is not None:
                 auxiliar.enqueue(actual.izq)
