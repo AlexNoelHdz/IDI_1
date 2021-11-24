@@ -20,11 +20,12 @@ class nodo:
                 return self.dato, 'RAIZ'
             
             if self.izq is not None:
-                value_izq = self.izq.min_max(prof-1, not tipo)
+                value_izq, _ = self.izq.min_max(not tipo, prof-1)
             if self.der is not None:
-                value_der = self.der.min_max(prof-1, not tipo)
-               
-            return tupla_min_max(value_izq[0], value_der[0], tipo)
+                value_der, _ = self.der.min_max(not tipo, prof-1)
+            
+                
+            return tupla_min_max(value_izq, value_der, tipo)
 # %%MiniMax Arbol
 # Level 1
 arbolito = nodo(0)
